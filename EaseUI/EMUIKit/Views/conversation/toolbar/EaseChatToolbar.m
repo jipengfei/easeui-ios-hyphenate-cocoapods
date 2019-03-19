@@ -210,7 +210,7 @@
 - (UIView *)recordView
 {
     if (_recordView == nil) {
-        _recordView = [[EaseRecordView alloc] initWithFrame:CGRectMake(90, 130, 140, 140)];
+        _recordView = [[EaseRecordView alloc] initWithFrame:CGRectMake(90, 130, 108, 108)];
     }
     
     return _recordView;
