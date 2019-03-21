@@ -472,7 +472,7 @@ NSString *const EaseMessageCellIdentifierSendFile = @"EaseMessageCellSendFile";
                     break;
                 case EMMessageBodyTypeImage:
                 {
-                    [_bubbleView updateImageMargin:_bubbleMargin];
+                    [_bubbleView updateImageMargin:UIEdgeInsetsZero];
                 }
                     break;
                 case EMMessageBodyTypeLocation:
@@ -487,7 +487,7 @@ NSString *const EaseMessageCellIdentifierSendFile = @"EaseMessageCellSendFile";
                     break;
                 case EMMessageBodyTypeVideo:
                 {
-                    [_bubbleView updateVideoMargin:_bubbleMargin];
+                    [_bubbleView updateVideoMargin:UIEdgeInsetsZero];
                 }
                     break;
                 case EMMessageBodyTypeFile:
