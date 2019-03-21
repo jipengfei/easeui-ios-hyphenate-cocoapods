@@ -229,11 +229,13 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
 }
 
 + (EMMessage *)getVideoMessageWithURL:(NSURL *)url
+                             duration:(NSInteger)duration
                                    to:(NSString *)to
                           messageType:(EMChatType)messageType
                            messageExt:(NSDictionary *)messageExt
 {
     EMVideoMessageBody *body = [[EMVideoMessageBody alloc] initWithLocalPath:[url path] displayName:@"video.mp4"];
+    body.duration = (int)duration;
     NSString *from = [[EMClient sharedClient] currentUsername];
     EMMessage *message = [[EMMessage alloc] initWithConversationID:to from:from to:to body:body ext:messageExt];
     message.chatType = messageType;

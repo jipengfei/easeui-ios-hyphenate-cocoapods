@@ -61,6 +61,7 @@ extern NSString *const EaseMessageCellIdentifierRecvFile;
 //video views
 @property (strong, nonatomic) UIImageView *videoImageView;
 @property (strong, nonatomic) UIImageView *videoTagView;
+@property (strong, nonatomic) UILabel *videoDurationLabel;
 
 //file views
 @property (strong, nonatomic) UIImageView *fileIconView;

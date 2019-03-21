@@ -403,6 +403,8 @@ NSString *const EaseMessageCellIdentifierSendFile = @"EaseMessageCellSendFile";
                 } else {
                     _bubbleView.videoImageView.image = image;
                 }
+                _bubbleView.videoDurationLabel.font = [UIFont systemFontOfSize:10.f];
+                _bubbleView.videoDurationLabel.text = [NSString stringWithFormat:@"%d''",(int)_model.mediaDuration];
             }
                 break;
             case EMMessageBodyTypeFile:

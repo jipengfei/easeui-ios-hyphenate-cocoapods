@@ -534,6 +534,17 @@ typedef enum : NSUInteger {
     return mp4Url;
 }
 
+//获取视频时间
+- (CGFloat) getVideoDuration:(NSURL*) URL
+{
+    NSDictionary *opts = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:NO]
+                                                     forKey:AVURLAssetPreferPreciseDurationAndTimingKey];
+    AVURLAsset *urlAsset = [AVURLAsset URLAssetWithURL:URL options:opts];
+    float second = 0;
+    second = urlAsset.duration.value/urlAsset.duration.timescale;
+    return second;
+}
+
 /*!
  @method
  @brief 通过当前会话类型，返回消息聊天类型
@@ -2083,8 +2094,9 @@ typedef enum : NSUInteger {
     else{
         progress = self;
     }
-    
-    EMMessage *message = [EaseSDKHelper getVideoMessageWithURL:url to:self.conversation.conversationId messageType:[self _messageTypeFromConversationType] messageExt:nil];
+    CGFloat duration = [self getVideoDuration:url];
+
+    EMMessage *message = [EaseSDKHelper getVideoMessageWithURL:url duration:duration to:self.conversation.conversationId messageType:[self _messageTypeFromConversationType] messageExt:nil];
     [self sendMessage:message isNeedUploadFile:YES];
 }
 

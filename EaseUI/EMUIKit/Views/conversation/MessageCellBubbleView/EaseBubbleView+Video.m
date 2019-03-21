@@ -44,6 +44,10 @@
 //    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.videoTagView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.videoImageView attribute:NSLayoutAttributeWidth multiplier:0.5 constant:0]];
 //    
 //    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.videoTagView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.videoTagView attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0]];
+    
+    //videoDurationLabel
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.videoDurationLabel attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.videoImageView attribute:NSLayoutAttributeRight multiplier:1.0 constant:-6]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.videoDurationLabel attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.videoImageView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-6]];
 }
 
 #pragma mark - public
@@ -60,6 +64,12 @@
     self.videoTagView.translatesAutoresizingMaskIntoConstraints = NO;
     self.videoTagView.backgroundColor = [UIColor clearColor];
     [self.videoImageView addSubview:self.videoTagView];
+    
+    self.videoDurationLabel = [[UILabel alloc] init];
+    self.videoDurationLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    self.videoDurationLabel.backgroundColor = [UIColor clearColor];
+    self.videoDurationLabel.textColor = [UIColor whiteColor];
+    [self.videoImageView addSubview:self.videoDurationLabel];
     
     [self _setupVideoBubbleConstraints];
 }

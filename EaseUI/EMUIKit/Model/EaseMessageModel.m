@@ -101,6 +101,7 @@
                 
                 // video file path
                 self.fileURLPath = videoBody.remotePath;
+                self.mediaDuration = videoBody.duration;
             }
                 break;
             case EMMessageBodyTypeFile:

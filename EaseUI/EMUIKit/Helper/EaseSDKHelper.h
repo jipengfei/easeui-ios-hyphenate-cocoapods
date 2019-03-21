@@ -173,12 +173,14 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo;
  @brief 构建待发送的视频消息
  @discussion        向环信id为to的用户发送视频消息
  @param url         视频文件本地路径url
+ @param duration    视频时长
  @param to          消息的接收方环信id
  @param messageType 消息的聊天类型
  @param messageExt  消息的扩展属性
  @result 返回构建完成的消息
  */
 + (EMMessage *)getVideoMessageWithURL:(NSURL *)url
+                             duration:(NSInteger)duration
                                    to:(NSString *)to
                           messageType:(EMChatType)messageType
                            messageExt:(NSDictionary *)messageExt;
