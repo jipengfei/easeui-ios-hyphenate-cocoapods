@@ -73,6 +73,7 @@
     self.voiceImageView.translatesAutoresizingMaskIntoConstraints = NO;
     self.voiceImageView.backgroundColor = [UIColor clearColor];
     self.voiceImageView.animationDuration = 1;
+    self.voiceImageView.contentMode = UIViewContentModeScaleAspectFit;
     [self.backgroundImageView addSubview:self.voiceImageView];
     
     self.voiceDurationLabel = [[UILabel alloc] init];
